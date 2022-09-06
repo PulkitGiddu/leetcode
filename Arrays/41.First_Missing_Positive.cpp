@@ -22,6 +22,8 @@ Explanation: The smallest positive integer 1 is missing.
 */
 code:
 
+
+// can we manuplate this array ??
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
