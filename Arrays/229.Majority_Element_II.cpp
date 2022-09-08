@@ -25,7 +25,7 @@ public:
         int count1 = 0;
         int count2 = 0 , i;
         
-        {
+        for(int i = 0; i<s; i++){
         if(nums[i] == num1)
             count1++;
         else if (nums[i] == num2)
