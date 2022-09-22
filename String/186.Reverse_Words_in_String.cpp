@@ -1,4 +1,4 @@
-186. Reverse words in a stirng 
+186. Reverse words in a string 
 /*
 Q --> 
 Given a character array s , reverse the order of words 
