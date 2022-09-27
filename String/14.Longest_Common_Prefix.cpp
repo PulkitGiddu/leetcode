@@ -34,3 +34,20 @@ public:
     return ans;
   } 
 };
+
+// 
+code: 
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+      if (strs.empty())
+      return "";
+
+    for (int i = 0; i < strs[0].length(); ++i) // triverse in i 
+      for (int j = 1; j < strs.size(); ++j) // triverse in j 
+        if (i == strs[j].length() || strs[j][i] != strs[0][i])
+          return strs[0].substr(0, i);
+
+    return strs[0];
+    }
+};
