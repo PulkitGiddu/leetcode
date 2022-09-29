@@ -1,0 +1,5 @@
+https://codeforces.com/blog/entry/72527 
+Modular Arithmetic 
+
+https://www.codingninjas.com/blog/2020/07/25/explained-euclids-gcd-algorithm/
+Euclid's GCD algorithm. 
