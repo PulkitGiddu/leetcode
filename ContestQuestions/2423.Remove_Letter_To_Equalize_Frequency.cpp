@@ -18,7 +18,54 @@ Input: word = "aazz"
 Output: false
 Explanation: We must delete a character, so either the frequency of "a" is 1 and the frequency of "z" is 2, or vice versa. It is impossible to make all present letters have equal frequency.
 */
-Code:
+Code1:
+class Solution {
+public:
+    bool equalFrequency(string word) {
+        map<char , int> mp;
+        int cnt = 0;
+        for(int i = 0 ; i<word.length() ; i++){
+            mp[word[i]]++;
+        }
+        
+        
+        
+        for(auto it: mp){
+            int val =0;
+            set<int> st;
+            for(auto it1: mp){
+                if(it1.first == it.first){
+                if(it.second-1 > 0){
+                    st.insert(it.second-1);
+                }
+                    continue;
+                }
+                
+                st.insert(it1.second);
+                
+                
+            }
+            
+            if(st.size() == 1){
+                return true;
+            }
+        }
+        
+        
+        for(auto it: mp){
+            if(it.second == 1){
+                cnt++;
+            }
+        }
+        
+        if(cnt == word.length()){
+            return true;
+        }
+        
+        return false;
+    }
+};
+Code 2:
 class Solution {
 public:
     bool equalFrequency(string word) {
