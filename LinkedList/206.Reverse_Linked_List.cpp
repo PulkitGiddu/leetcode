@@ -35,6 +35,9 @@ public:
     }
 };
 
+// TC: O(n)
+// SC : O(1)
+
 
 code2:
 class Solution {
