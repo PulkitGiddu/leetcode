@@ -63,8 +63,14 @@ class Solution{
     public:
     vector<string> findPath(vector<vector<int>> &m, int n) {
         vector<string> ans; 
+        if(m[0][0] == 0)
+        {
+                return ans;
+        }
+        
         int srcx = 0; 
         int srcy = 0;
+        
         vector<vector<int>> visited = m; 
         // initialize with 0
         for(int i = 0; i<n; i++){
@@ -72,7 +78,7 @@ class Solution{
                 visited[i][j] = 0; 
             }
         }
-        string path =""; 
+        string path = ""; 
         solve(m, n, ans, srcx, srcy, visited, path);
         sort(ans.begin(), ans.end());
         return ans; 
