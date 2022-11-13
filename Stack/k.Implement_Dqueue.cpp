@@ -1,4 +1,10 @@
 Q - Implement dequeue 
+/*
+
+
+
+*/
+
 Code: 
 
 #include <bits/stdc++.h> 
