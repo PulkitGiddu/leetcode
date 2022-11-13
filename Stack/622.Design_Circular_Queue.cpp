@@ -3,6 +3,10 @@ Code:
 // Time Complexity: O(1)
 // Space Complexity: O(N)
 class MyCircularQueue {
+private:
+    int cnt, queueSize, headIdx;
+    vector<int> q;
+
 public:
     MyCircularQueue(int k) {
         // the queue holding the elements for the circular queue
@@ -10,7 +14,7 @@ public:
         // the number of elements in the circular queue
         cnt = 0;
         // queue size
-        sz = k;
+        queueSize = k;
         // the idx of the head element
         headIdx = 0;
     }
@@ -18,7 +22,7 @@ public:
     bool enQueue(int value) {
         // handle full case
         if (isFull()) return false;
-        q[(headIdx + cnt) % sz] = value;
+        q[(headIdx + cnt) % queueSize] = value;
         // increase the number of elements by 1
         cnt += 1;
         return true;
@@ -28,7 +32,7 @@ public:
         // handle empty case
         if (isEmpty()) return false;
         // update the head index
-        headIdx = (headIdx + 1) % sz;
+        headIdx = (headIdx + 1) % queueSize;
         // decrease the number of elements by 1
         cnt -= 1;
         return true;
@@ -44,7 +48,7 @@ public:
     int Rear() {
         // handle empty queue case
         if (isEmpty()) return -1;
-        return q[(headIdx + cnt - 1) % sz];
+        return q[(headIdx + cnt - 1) % queueSize];
     }
     
     bool isEmpty() {
@@ -55,10 +59,7 @@ public:
     bool isFull() {
         // return true if the count is equal to the queue size
         // else return false
-        return cnt == sz;
+        return cnt == queueSize;
     }
-    
-private:
-    int cnt, sz, headIdx;
-    vector<int> q;
+   
 };
