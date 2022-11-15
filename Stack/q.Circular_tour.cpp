@@ -1,4 +1,4 @@
-Q - Circular tour 
+Q - Circular tour.
 
 Code: 
 class Solution{
