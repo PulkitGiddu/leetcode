@@ -1,4 +1,4 @@
-Q - SumofMax_MIn_ksize
+Q - SumofMax MIn ksize
 code: 
 
 #include<bits/stdc++.h>
