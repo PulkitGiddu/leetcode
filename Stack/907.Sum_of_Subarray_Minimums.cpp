@@ -1,4 +1,4 @@
-Q - 907. Sum of Subarray Minimums
+Q - 907. Sum of Subarray Minimums.
 
 Code: 
 class Solution {
