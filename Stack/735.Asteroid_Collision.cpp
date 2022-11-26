@@ -1,4 +1,4 @@
-Q - 735. Asteroid Collision 
+Q - 735. Asteroid Collision.
 
 Code: 
 
