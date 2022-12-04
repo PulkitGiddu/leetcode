@@ -1,4 +1,4 @@
-Q - 2104. Sum of Subarray Ranges 
+Q - 2104. Sum of Subarray Ranges. 
 
 Code: 
 class Solution{
