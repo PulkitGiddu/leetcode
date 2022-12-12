@@ -1,4 +1,4 @@
-Q - 155. Min Stack.
+Q - 155. Min Stack..
   
 Code: 
 class MinStack {
