@@ -1,4 +1,4 @@
-Q - 402. Remove K Digits 
+Q - 402. Remove K Digits. 
 Code: 
 
 class Solution {
