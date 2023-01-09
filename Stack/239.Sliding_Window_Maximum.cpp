@@ -1,4 +1,4 @@
-Q - 239. Sliding Window Maximum
+Q - 239. Sliding Window Maximum.
 
 Code: 
 class Solution{
