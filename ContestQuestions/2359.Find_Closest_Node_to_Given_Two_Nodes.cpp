@@ -1,4 +1,4 @@
-2359. Find Closest Node to Given Two Nodes 
+2359. Find Closest Node to Given Two Nodes.
 
 Code: 
 class Solution {
