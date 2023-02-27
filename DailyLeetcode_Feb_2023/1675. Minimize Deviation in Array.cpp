@@ -1,4 +1,4 @@
-1675. Minimize Deviation in Array 
+1675. Minimize Deviation in Array .
 
 class Solution {
 public:
