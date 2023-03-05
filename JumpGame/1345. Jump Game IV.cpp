@@ -49,30 +49,39 @@ Intuition of this Problem:
 The problem requires us to find the minimum number of steps needed to reach the last index of a given array of integers. Each step can be one of the following:
 
 Move one step forward to the next index (i+1) if it exists.
+---------------------------------------------------------------------------------------------------------------
 Move one step backward to the previous index (i-1) if it exists.
+---------------------------------------------------------------------------------------------------------------
 Move to any index j where the element at index i is equal to the element at index j (i.e., arr[i] == arr[j]).
-Below diagram is based on above 3 conditions
-WhatsApp Image 2023-03-05 at 7.05.43 AM.jpeg
+---------------------------------------------------------------------------------------------------------------
 
-We can use a BFS (breadth-first search) approach to find the minimum number of steps to reach the last index. Starting from the first index, we can visit all the neighboring indices and add them to a queue. We can then repeat this process for all the indices in the queue until we reach the last index.
 
-To efficiently find the neighboring indices, we can use an unordered_map to store the indices of each value in the input array. This allows us to easily find the neighboring indices of a given index using the values at that index. We can mark the visited indices to avoid visiting them again and keep track of the number of steps taken to reach each index.
+We can use a BFS (breadth-first search) approach to find the minimum number of steps to reach the last index. Starting from the first index, we can visit all the 
+neighboring indices and add them to a queue. We can then repeat this process for all the indices in the queue until we reach the last index.
 
-Once we reach the last index, we can return the number of steps taken to reach it. If we cannot reach the last index, we can return -1 to indicate that it is not possible to reach the last index.
+To efficiently find the neighboring indices, we can use an unordered_map to store the indices of each value in the input array. This allows us to easily find the 
+neighboring indices of a given index using the values at that index. We can mark the visited indices to avoid visiting them again and keep track of the number of 
+steps taken to reach each index.
+
+Once we reach the last index, we can return the number of steps taken to reach it. If we cannot reach the last index, we can return -1 to indicate that it is not 
+possible to reach the last index.
 
 Approach for this Problem:
+
 Create an unordered_map called indices to store the indices of each value in the input array.
 For each value in the input array, add its index to the corresponding vector in the indices map.
 Create a queue called storeIndex to store the indices of adjacent elements and a vector called visited to mark visited indices.
 Push the first index of the array to the storeIndex queue and mark it as visited in the visited vector.
 Initialize a steps variable to 0.
+
 While the storeIndex queue is not empty, do the following:
 a. Get the size of the storeIndex queue.
 b. For each index in the storeIndex queue, do the following:
 i. If the index is the last index of the array, return the number of steps.
 ii. Get the vector of indices for the current value from the indices map.
 iii. Add the indices of the adjacent elements to the vector.
-iv. For each index in the vector, if it is within the array bounds and has not been visited, push it to the storeIndex queue and mark it as visited in the visited vector.
+iv. For each index in the vector, if it is within the array bounds and has not been visited, push it to the storeIndex queue and mark it as visited in the 
+visited vector.
 v. Clear the vector of indices.
 c. Increment the steps variable.
 If the last index of the array is not reached, return -1.
