@@ -1,4 +1,4 @@
-1402. Reducing Dishes 
+1402. Reducing Dishes..
 
 Code:  // using memoization, bottom to top approch 
 
