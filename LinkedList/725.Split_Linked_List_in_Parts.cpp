@@ -21,68 +21,37 @@ The input has been split into consecutive parts with size difference at most 1, 
 code:  
 class Solution {
 public:
-    vector<ListNode*> splitListToParts(ListNode* root, int k) {
-        //first calculate the length
-        int len=0;
-        ListNode* temp=root;
-        while(temp)
-        {
-            len++;
-            temp=temp->next;
+    vector<ListNode*> splitListToParts(ListNode* head, int k) {
+        // step1: find the length
+        ListNode* curr = head; 
+        int L = 0; 
+        while(curr){
+            L++; 
+            curr = curr -> next; 
         }
-        
-        int numNodes=len/k; //the number of nodes that are to be in each group
-        int extra=len%k;  //the extra nodes that are left
-        int i=0;
-        vector<ListNode*> res;
-        temp=root;
-        while(temp)
-        {
-            res.push_back(temp);
-            //get the numNodes and make the last node next to NULL
-            int currLen=1;
-            while(currLen<numNodes)
-            {
-                temp=temp->next;
-                currLen++;
-            }
-            if(extra>0 && len>k)
-            {
-                temp=temp->next;
-                extra--;
-            }
-            ListNode* x=temp->next;
-            temp->next=NULL;
-            temp=x;
-        }
-        //if the number of nodes are less than k we add NULL
-        while(len<k)
-        {
-            res.push_back(NULL);
-            len++;
-        }
-        return res;
-        
-    }
-};
 
-Code2: 
-public:
-    vector<ListNode*> splitListToParts(ListNode* root, int k) {
-        vector<ListNode*> parts(k, nullptr);
-        int len = 0;
-        for (ListNode* node = root; node; node = node->next)
-            len++;
-        int n = len / k, r = len % k; // n : minimum guaranteed part size; r : extra nodes spread to the first r parts;
-        ListNode* node = root, *prev = nullptr;
-        for (int i = 0; node && i < k; i++, r--) {
-            parts[i] = node;
-            for (int j = 0; j < n + (r > 0); j++) {
-                prev = node;
-                node = node->next;
+        int eachbucketNodes = L/k;
+        int remainderNodes = L%k;
+
+        vector<ListNode*> result(k, NULL); 
+
+        curr = head;
+        ListNode* prev = NULL; 
+
+        for(int i = 0; i<k; i++){
+
+            result[i] = curr; 
+
+            for(int count = 1; count <= eachbucketNodes + (remainderNodes > 0 ? 1:0); count++){
+                prev = curr; 
+                curr = curr -> next; 
+
             }
-            prev->next = nullptr;
-        }
-        return parts;
+            if(prev!=NULL){
+            prev -> next = NULL; 
+            }
+            remainderNodes--; 
+        } 
+        return result; 
     }
 };
